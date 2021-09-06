@@ -4,7 +4,7 @@ include "../config/config.php";
 if(isset($_POST['newbutton'])){
     $name = $_POST['name'];
     $tpnumber = $_POST['tpnumber'];
-    //check data di database
+    //check data di Database
     $check = $mysqli->prepare("SELECT * FROM students where name=? or tpnumber=?");
     $check->bind_param("ss",$name,$tpnumber);
     $check->execute();
